@@ -3,10 +3,18 @@
   src: url("./fonts/19925.ttf");
 }
 body {
-  margin: 0 auto;
+  margin: 0;
+  padding: 0;
   font-family: Rozha;
   background-color: #2A2D34;
   color: #00C2D1;
+}
+ul {
+  list-style: none;
+}
+p {
+  padding: 0;
+  margin: 0;
 }
 
 /*Header*/
@@ -15,21 +23,20 @@ header {
   justify-content: space-around;
   flex-direction: row;
   align-items: center;
+  padding: 0px 5%;
 }
 .header-logo {
   display: flex;
   align-items: center;
-  flex-grow: 2;
   flex-direction: row;
-  flex-wrap: nowrap;
   text-transform: uppercase;
+  flex-grow: 1;
 }
 
 .header-logo p {
   text-transform: uppercase;
   letter-spacing: .5em;
   padding: 1.5em 0em;
-  width: 40em;
 }
 
 .header-logo p span {
@@ -52,21 +59,26 @@ header {
   100% { background-position: 100% 50%; }
 }
 .header-menu {
-  flex-grow: 1;
+
 }
 
 .header-menu ul {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  flex-grow: 2;
 }
 
-.header-menu ul li {
-  list-style: none;
-}
 .header-menu ul li a {
   text-decoration: none;
   color: #ef6017;
+  margin: 30px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.header-menu ul li a:hover {
+  color: #00C2D1;
 }
 
 /*Button*/
@@ -146,15 +158,65 @@ position: relative;
    .promo {
      display: flex;
      width: 100%;
-     justify-content: center;
+     justify-content: space-between;
      align-items: center;
-     background: url(img/channels4_banner.jpg) no-repeat;
+     background: url(img/forest-931706_1280.jpg) no-repeat;
      background-size: cover;
-     height: 55vh;
+     background-position: center;
+     height: 88vh;
+     box-shadow: 0 30px 43px rgba(0,194,209,0.2);
    }
    .promo-text {
      display: flex;
      flex-direction: column;
      align-items: center;
-     color: #00C2D1;
+     color: seashell;
+     padding: 0 10%
    }
+   .promo-text h1 {
+     margin: 0;
+     padding: 0;
+   }
+
+
+/* Portrait tablets and medium desktops */
+@media (min-width: 1100px) and (max-width: 1260px) {
+.promo-logo img {
+  width: 400px;
+}
+
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 845px) and (max-width: 1099px) {
+  .promo-logo img {
+    width: 400px;
+  }
+  .promo-text {
+    padding: 0 0 0 5%;
+  }
+
+
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 844px) {
+  .promo {
+    flex-direction: column;
+  }
+  .promo-text {
+   margin-top: 10%;
+  }
+  .header-menu ul li a {
+    margin: 10px;
+  }
+
+}
+
+/* Landscape phones and smaller */
+@media (max-width: 523px) {
+  .promo-text h1 {
+    font-size: 23px;
+  }
+
+}
